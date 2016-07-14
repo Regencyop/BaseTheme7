@@ -71,6 +71,13 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="row">
+                                    <div class="col-xs-6" ng-if="!(user.Permissions.contains('HidePricing'))">
+                                        <p>
+                                            <span>{{'Unit Price' | r | xlat}}</span>
+                                            <br/>
+                                            {{item.UnitPrice | culturecurrency}}
+                                        </p>
+                                    </div>
                                     <div class="col-xs-6">
                                         <div ng-if="!(user.Permissions.contains('HidePricing'))">
                                             <small>{{'Total' | r | xlat}}</small>
@@ -78,13 +85,6 @@
                                                 {{item.LineTotal | culturecurrency}}
                                             </h2>
                                         </div>
-                                    </div>
-                                    <div class="col-xs-6" ng-if="!(user.Permissions.contains('HidePricing'))">
-                                        <p>
-                                            <span>{{'Unit Price' | r | xlat}}</span>
-                                            <br/>
-                                            {{item.UnitPrice | culturecurrency}}
-                                        </p>
                                     </div>
                                 </div>
                                 <div class="row" ng-if="(user.Permissions.contains('DateNeededRequired') || user.Permissions.contains('DateNeededOptional')) || user.Permissions.contains('CostCenterPerLine')">
