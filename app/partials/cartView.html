@@ -48,45 +48,48 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-9">
-                        <div class="row">
-                            <div class="col-md-6" ng-if="currentOrder.Status != 'AwaitingApproval'">
-                                <a ng-href="cart/{{item.Product.InteropID}}/{{$index}}">
-                                    <h3 class="text-primary">
-                                        <i class="fa fa-edit"></i>
-                                        {{item.ProductIDText}}
-                                    </h3>
-                                    <p>
-                                        {{item.Product.Name}}
-                                    </p>
-                                </a>
-                            </div>
-                            <div class="col-md-6" ng-if="currentOrder.Status == 'AwaitingApproval'">
-                                <h3 class="text-primary">
-                                    {{item.ProductIDText}}
-                                </h3>
-                                <p>
-                                    {{item.Product.Name}}
-                                </p>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="row">
-                                    <div class="col-xs-6" ng-if="!(user.Permissions.contains('HidePricing'))">
-                                        <p>
-                                            <span>{{'Unit Price' | r | xlat}}</span>
-                                            <br/>
-                                            {{item.UnitPrice | culturecurrency}}
-                                        </p>
-                                    </div>
-                                    <div class="col-xs-6">
-                                        <div ng-if="!(user.Permissions.contains('HidePricing'))">
-                                            <small>{{'Total' | r | xlat}}</small>
-                                            <h2 class="text-success">
-                                                {{item.LineTotal | culturecurrency}}
-                                            </h2>
-                                        </div>
-                                    </div>
-                                </div>
+                     <div  class="col-sm-9">
+                         <div  class="row">
+                             <div  class="col-md-6"  ng-if="currentOrder.Status  !=  'AwaitingApproval'">
+                                 <!--
+                                 Removed link for better UX
+                                 <a  ng-href="cart/{{item.Product.InteropID}}/{{$index}}">
+                                 removed  from  h3  above  item.productIDText
+                                 <i  class="fa  fa-edit"></i>
+                                 -->
+                                 <div>
+                                     <h3  class="text-primary">
+                                         {{item.Product.Name}}
+                                     </h3>
+                                     <p>
+                                         {{item.ProductIDText}}
+                                     </p>
+                                 <!--a-->
+                                 </div>
+                             </div>
+                             <div  class="col-md-6"  ng-if="currentOrder.Status  ==  'AwaitingApproval'">
+                                 <h3  class="text-primary">
+                                     {{item.Product.Name}}
+                                 </h3>
+                                 <p>
+                                     {{item.ProductIDText}}
+                                 </p>
+                             </div>
+                             <div  class="col-md-6">
+                                 <div  class="row">
+                                     <div class="col-xs-6"  ng-if="!(user.Permissions.contains('HidePricing'))">
+                                        <span>{{'Unit  Price'  |  r  |  xlat}}</span>
+                                        <h3 class="text-success">
+                                            {{item.UnitPrice  |  culturecurrency}}
+                                        </h3>
+                                     </div>
+                                     <div class="col-xs-6"  ng-if="!(user.Permissions.contains('HidePricing'))">
+                                        <span>{{'Total'  |  r  |  xlat}}</span>
+                                        <h3 class="text-success">
+                                            {{item.LineTotal  |  culturecurrency}}
+                                        </h3>
+                                     </div>
+                                 </div>
                                 <div class="row" ng-if="(user.Permissions.contains('DateNeededRequired') || user.Permissions.contains('DateNeededOptional')) || user.Permissions.contains('CostCenterPerLine')">
                                     <div class="col-xs-12 col-sm-6" ng-if="user.Permissions.contains('DateNeededRequired') || user.Permissions.contains('DateNeededOptional')">
                                         <div class="row view-form-icon">
