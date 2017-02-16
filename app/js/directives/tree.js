@@ -22,7 +22,7 @@ four51.app.directive('node', ['$compile', function($compile) {
 		template: '<li class="451_cat_item" ng-class="{\'active\':  current.InteropID == node.InteropID}"><a ng-href="catalog/{{node.InteropID}}" ng-bind-html="node.Name"></a></li>',
 		link: function(scope, element) {
 			if (angular.isArray(scope.node.SubCategories)) {
-				element.append("<categorytree tree='node.Categories' current='current'/>");
+				element.append("<categorytree tree='node.SubCategories' current='current'/>");
 				$compile(element.contents())(scope);
 			}
 		}
