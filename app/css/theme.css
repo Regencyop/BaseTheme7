@@ -2398,7 +2398,8 @@
     }
     .thumbnail img {
       max-height: 500px;
-    
+      min-height: 100px;
+      max-width: 100%;
     }
     
     .well {
