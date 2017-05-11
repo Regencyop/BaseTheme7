@@ -2890,7 +2890,7 @@
     }
     
     .product-detail-default .template1Controller textarea.ng-invalid, select.ng-invalid, input.ng-invalid:invalid{
-        width:50%;
+        width:100%;
     }
     
    .product-detail-default .template1Controller .form-control{
