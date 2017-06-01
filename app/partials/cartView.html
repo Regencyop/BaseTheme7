@@ -28,7 +28,7 @@
                     need to be set up as a kit. Separate every item with double pipes and surround with single quotation marks 
                     and not double.
                     -->
-                    <button  type="button"  title="Remove  Item"  class="btn  btn-danger  deleteItem" ng-hide="item.Product.InteropID == 'prodId1' || 'someOtherProdId'" ng-click="removeItem(item)">
+                    <button  type="button"  title="Remove  Item"  class="btn  btn-danger  deleteItem" ng-click="removeItem(item)">
                         <span class="fa fa-minus-circle fa-inverse"></span>
                     </button>
                     <div class="col-sm-3">
@@ -139,19 +139,15 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-xs-12">
-                                <button type="button" class="btn btn-default" ng-show="item.SpecsLength > 0" ng-init="toggleSpecs = false" ng-click="toggleSpecs = !toggleSpecs">
-                                    <span ng-show="toggleSpecs == false"><i class="fa fa-plus-circle"></i> {{('Show' | r) + ' ' + ('Specification' | r) | xlat}}</span>
-                                    <span ng-show="toggleSpecs == true"><i class="fa fa-minus-circle"></i> {{('Hide' | r) + ' ' + ('Specification' | r) | xlat}}</span>
-                                </button>
-                                <ul ng-show="toggleSpecs == true" class="list-group">
-                                    <li ng-repeat="spec in item.Specs | filter:{'CanSetForLineItem':true} " class="list-group-item">
-                                        <span class="text-info">{{spec.Label || spec.Name}}: </span>
-                                        <span ng-if="spec.ControlType == 'File'"><a ng-href="{{spec.File.Url}}">{{spec.File.OriginalName + Extension}}</a></span></span>
-                                        <span ng-if="spec.ControlType != 'File'">{{spec.Value || ('(unspecified)' | xlat)}}</span>
-                                    </li>
-                                </ul>
-                            </div>
+                             <div  class="col-xs-12">
+                                 <ul  ng-show="toggleSpecs  ==  true"  class="list-group">
+                                     <li  ng-repeat="spec  in  item.Specs  |  filter:{'CanSetForLineItem':true}  "  class="list-group-item">
+                                         <span  class="text-info">{{spec.Label  ||  spec.Name}}:  </span>
+                                         <span  ng-if="spec.ControlType  ==  'File'"><a  ng-href="{{spec.File.Url}}">{{spec.File.OriginalName  +  Extension}}</a></span></span>
+                                         <span  ng-if="spec.ControlType  !=  'File'">{{spec.Value  ||  ('(unspecified)'  |  xlat)}}</span>
+                                     </li>
+                                 </ul>
+                             </div>
                         </div>
                     </div>
                 </div>
