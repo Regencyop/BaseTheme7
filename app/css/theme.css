@@ -2502,7 +2502,24 @@
       border: 1px solid #999;
       height: 52px;
     }
-    
+
+	.product-variants {
+	    padding-left: 0 !important;
+	}
+	
+	.product-variants a {
+	    display: inline-block !important;
+	    width: 83.3333333%;
+	}
+	
+	.product-variants a:before {
+	    display: none;
+	}
+	
+	div.delete {
+	    float: right !important;
+	}
+
     .panel-category-list {
         height: 410px;
         overflow: hidden;
