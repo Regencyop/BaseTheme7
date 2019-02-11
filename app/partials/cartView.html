@@ -95,21 +95,6 @@
                                         </div>
                                     </div>
                                 </div>
-<!-- Replaced with above                                 <div  class="row">
-                                     <div class="col-xs-6"  ng-if="!(user.Permissions.contains('HidePricing'))">
-                                        <span>{{'Unit  Price'  |  r  |  xlat}}</span>
-                                        <h3 class="text-success">
-                                            {{item.UnitPrice  |  culturecurrency}}
-                                        </h3>
-                                     </div>
-                                     <div class="col-xs-6"  ng-if="!(user.Permissions.contains('HidePricing'))">
-                                        <span>{{'Total'  |  r  |  xlat}}</span>
-                                        <h3 class="text-success">
-                                            {{item.LineTotal  |  culturecurrency}}
-                                        </h3>
-                                     </div>
-                                 </div>
--->
                                 <div class="row" ng-if="(user.Permissions.contains('DateNeededRequired') || user.Permissions.contains('DateNeededOptional')) || user.Permissions.contains('CostCenterPerLine')">
                                     <div class="col-xs-12 col-sm-6" ng-if="user.Permissions.contains('DateNeededRequired') || user.Permissions.contains('DateNeededOptional')">
                                         <div class="row view-form-icon">
