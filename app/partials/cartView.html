@@ -80,8 +80,22 @@
                                      </p>
  -->
                              </div>
-                             <div  class="col-md-6">
-                                 <div  class="row">
+                             <div class="col-md-6">
+                                <div class="row">
+                                     <div class="col-xs-6" ng-if="!(user.Permissions.contains('HidePricing'))">
+                                             <span>{{'Unit  Price'  |  r  |  xlat}}</span>
+                                             <h3 class="cartUnitPricing" ng-show="item.UnitPrice == ''">$0.00</h3>
+                                             <h3 class="cartUnitPricing">{{item.UnitPrice  |  culturecurrency}}</h3>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div ng-if="!(user.Permissions.contains('HidePricing'))">
+                                             <span>{{'Total'  |  r  |  xlat}}</span>
+                                             <h3 ng-show="item.LineTotal == ''">$0.00</h3>
+                                             <h3>{{item.LineTotal  |  culturecurrency}}</h3>
+                                        </div>
+                                    </div>
+                                </div>
+<!-- Replaced with above                                 <div  class="row">
                                      <div class="col-xs-6"  ng-if="!(user.Permissions.contains('HidePricing'))">
                                         <span>{{'Unit  Price'  |  r  |  xlat}}</span>
                                         <h3 class="text-success">
@@ -95,6 +109,7 @@
                                         </h3>
                                      </div>
                                  </div>
+-->
                                 <div class="row" ng-if="(user.Permissions.contains('DateNeededRequired') || user.Permissions.contains('DateNeededOptional')) || user.Permissions.contains('CostCenterPerLine')">
                                     <div class="col-xs-12 col-sm-6" ng-if="user.Permissions.contains('DateNeededRequired') || user.Permissions.contains('DateNeededOptional')">
                                         <div class="row view-form-icon">
