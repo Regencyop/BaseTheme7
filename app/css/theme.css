@@ -2204,11 +2204,6 @@
       background-color: transparent;
       border: 0;
     }
-    .hidden {
-      visibility: hidden !important;
-      display: none !important;
-    }
-    
     .table-responsive tbody td {
       border-left: 1px solid #999;
     }
@@ -3039,7 +3034,7 @@ img.product-image-large:hover {
         line-height: 12px;
     }
 
-    .Weight, .ProductImage, .VibeItemID, .fa-edit, .hidden {
+    .Weight, .ProductImage, .VibeItemID, .fa-edit, .hidden, .keyword {
         display: none !important;
     }
 
