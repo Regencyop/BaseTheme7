@@ -3086,7 +3086,13 @@ img.product-image-large:hover {
         background-color: #222 !important;
     }
     
-
+    .warning {
+        color: #d00;
+        font-size: 16px;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+    }
 
 
 
